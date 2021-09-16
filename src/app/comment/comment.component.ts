@@ -9,6 +9,7 @@ import { NewsHandlerService } from '../Services/news-handler.service';
 })
 export class CommentComponent implements OnInit {
   public id:any;
+  public s=true;
 public ques:any;
 public com:any;
 public data:any;
@@ -36,10 +37,24 @@ public data:any;
        location.reload()
      }
 
-    upvote()
-    {
-      return "dff"
-    }
+     public upvote(id:any,score:any)
+     {
+       console.log(id)
+       if(localStorage.getItem("user")==null)
+       {
+         alert("Please!! login")
+         return 
+       }
+       this.s=true
+       let vote={
+         "user":localStorage.getItem("user"),
+         "id":id,
+         "score":score+1
+       }
+       console.log(id);
+       this._service.advote(vote).subscribe((res)=>{console.log(res);
+          this._service.getCpost(this.id).subscribe(data => {this.ques=data;}, error => console.log(error));this.ques=res},(err)=>console.log(err))
+     }
     public subs(str:any)
   {
     var str1="";
@@ -50,10 +65,28 @@ public data:any;
   {
     return this._service.caltime(ctime)
   }
-  adhide(/*passid*/)
+  check(vote:any)
   {
-    //add this id to user data to skip
-    console.log("in1")
+   
+    let user =localStorage.getItem("user")
+    if(user !=null)
+    {
+      console.log("in IF")
+        return vote.includes(user)
+    }
+   
+    return false
+
+  }
+
+  unvote(id:any,score:any)
+  {
+    let dec={
+      "id":id,
+      "user":localStorage.getItem("user"),
+      "score":score-1
+    }
+    this._service.unvote(dec).subscribe(data=>{console.log(data); this._service.getCpost(this.id).subscribe(data => {this.ques=data;}, error => console.log(error))},err=>{console.log(err)})
   }
   ngOnInit(): void {
   }

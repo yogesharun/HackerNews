@@ -1,3 +1,7 @@
 .login{
     margin-left: 350px;
 }
+
+.mat-button, .mat-raised-button{
+    background-color: #FF6600;
+}

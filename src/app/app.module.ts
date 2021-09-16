@@ -25,6 +25,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatStepperModule} from '@angular/material/stepper';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 
@@ -54,6 +55,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatButtonModule,
     MatIconModule,
     MatStepperModule,
+    MatTabsModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyB2iqULGDyr4SOJBbeETPt_No6dyDL0PCE",
       authDomain: "fir-angular-auth-f8c59.firebaseapp.com",

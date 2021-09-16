@@ -3,3 +3,6 @@
     margin-top: 10px;
 }
 
+.mat-button, .mat-raised-button{
+    background-color: #FF6600;
+}

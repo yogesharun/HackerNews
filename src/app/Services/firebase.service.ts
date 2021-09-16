@@ -13,12 +13,18 @@ export class FirebaseService {
     .then(res=>{
       this.isLoggedIn= true
       localStorage.setItem('user',JSON.stringify(res.user?.email))
+    }).catch(err=>{
+      console.log(err)
+      alert("Username or Password incorrect")
     })
   }
 
   async signup(email: string, password:string){
     await this.firebaseAuth.createUserWithEmailAndPassword(email,password)
     .then(res=>{
+    }).catch(err=>{
+      console.log(err)
+      alert(err)
     })
   }
   logout(){

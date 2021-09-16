@@ -3,14 +3,14 @@
         <img class="nav-logo" src="https://news.ycombinator.com/y18.gif">
     </div>
     <p>Hacker News</p>
-<a href="/news" routerLinkActive="active" >news</a>
-<a href="/comments" routerLinkActive="active" >comments</a>
-<a href="/past" routerLinkActive="active" >past</a>
-<a href="/submit" routerLinkActive="active" >submit</a>
-<a *ngIf="check()" href="/login" routerLinkActive="active" >login</a>
-<div *ngIf="!check()">
+<a class="nav-bara" [routerLink]="['/news']" routerLinkActive="active" >news</a>
+<a class="nav-bara" [routerLink]="['comments']" routerLinkActive="active" >comments</a>
+<a class="nav-bara" [routerLink]="['/past']" routerLinkActive="active" >past</a>
+<a class="nav-bara" [routerLink]="['/submit']" routerLinkActive="active" >submit</a>
+<a class="nav-barbutton" mat-raised-button *ngIf="check()" [routerLink]="['/login']" routerLinkActive="active" >login</a>
+<div class="nav-barbutton" *ngIf="!check()">
     <span>{{user}}</span>
-    <button (click)="logout()">logout</button>
+    <button mat-raised-button (click)="logout()">logout</button>
 </div>
 
 

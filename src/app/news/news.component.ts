@@ -1,6 +1,4 @@
-import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 import { Component, OnInit } from '@angular/core';
-import { Timestamp } from 'bson';
 import { NewsHandlerService } from '../Services/news-handler.service';
 
 @Component({

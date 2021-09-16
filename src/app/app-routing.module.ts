@@ -9,6 +9,10 @@ import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {
+    path:"",
+    component:NewsComponent
+  },
+  {
     path:'news',
     component:NewsComponent,
   },
