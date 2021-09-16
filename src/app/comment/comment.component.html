@@ -1,0 +1,28 @@
+<div *ngFor="let x of ques.data">
+    
+    <img (click)="upvote()" height="20px" width="20px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw6D6HQRkVCK_htqe5KEGgPwsqQSKLax8_jQ&usqp=CAU" alt="upvote" />
+       &nbsp;<a href="{{x.url}}">{{x.title}}</a>
+       <a href="view?url={{x.url}}">({{subs(x.url)}})</a><br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       make diffdiv{{x.score}} points by <a href="user?user={{x.by}}">{{x.by}}</a> 
+       &nbsp;
+      <a href="comment?id={{x.id}}">{{caltime(x.time)}}</a>|<a href="" (click)="adhide()">hide</a>|
+      <a href="comment?id={{x.id}}">{{x.kids.length}}comments</a>
+      
+  </div>
+  <mat-form-field appearance="fill">
+    <mat-label>comment</mat-label>
+    <textarea #comment matInput></textarea>
+  </mat-form-field>
+  <div>
+  <button mat-raised-button  (click)="addc(comment.value)">add comment</button>
+  <div>
+    <mat-stepper orientation="vertical">
+      <mat-step *ngFor="let x1 of com.data">
+        <ng-template matStepLabel>{{x1.by}}.{{caltime(x1.time)}}</ng-template>
+        <ng-template matStepContent>
+          <p>{{x1.text}}</p>
+        </ng-template>
+      </mat-step>
+    </mat-stepper>
+  </div>

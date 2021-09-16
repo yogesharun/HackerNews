@@ -1,0 +1,14 @@
+<div class="space" *ngFor="let x of data1.data;index as i"><mat-card>
+    {{i+1}}. 
+ <img style="vertical-align: top;" (click)="upvote(x.id,x.score)" [hidden]="check(x.vote)" height="20px" width="20px" src="https://th.bing.com/th/id/R.0d64c7042e2a554e3d01a44706f70e9c?rik=jh6jI20OWP89TQ&riu=http%3a%2f%2fwww.i2symbol.com%2fforce_download.php%3ffile%3dimages%2fsymbols%2fgeometry%2fblack_up_pointing_small_triangle_u25B4_icon_256x256.png&ehk=3tZqOdH28lVGq4dFmT%2bcs9tLbZYY7bD%2fHLZE2umgBOQ%3d&risl=&pid=ImgRaw&r=0" alt="upvote" />
+  &nbsp;<a class="news" href="{{x.url}}">{{x.title}}</a>
+  <a class="news" href="view?url={{x.url}}">({{subs(x.url)}})</a><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <!-- make diff div-->{{x.score}} points by <a class="news" href="user?user={{x.by}}">{{x.by}}</a> 
+  &nbsp;
+ <a class="news" href="comment?id={{x.id}}">{{caltime(x.time)}}</a>|
+ <a class="news" [hidden]="!check(x.vote)" (click)="unvote(x.id,x.score)">unvote</a>|
+ <a class="news" href="comment?id={{x.id}}">{{x.kids.length}}comments</a>
+ </mat-card>
+ </div>
+ 

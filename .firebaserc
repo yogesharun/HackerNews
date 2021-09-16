@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fir-angular-auth-f8c59": {
+      "hosting": {
+        "hackernews": [
+          "fir-angular-auth-f8c59"
+        ]
+      }
+    }
+  }
+}

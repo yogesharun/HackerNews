@@ -1,0 +1,29 @@
+.nav-bar{
+    background-color: rgb(255, 102,0);
+    display: flex;
+    justify-content:left;
+    align-items: center;
+}
+
+.nav-logo{
+    outline: 1px solid white;
+    margin: 10px;
+}
+
+.nav-bar p{
+    font-size: 1em;
+    align-content: center;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.nav-bar a{
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-bar a::after{
+    margin-left: 10px;
+    content: "|";
+}

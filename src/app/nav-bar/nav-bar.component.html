@@ -1,0 +1,19 @@
+<div class="nav-bar">
+    <div>
+        <img class="nav-logo" src="https://news.ycombinator.com/y18.gif">
+    </div>
+    <p>Hacker News</p>
+<a href="/news" routerLinkActive="active" >news</a>
+<a href="/comments" routerLinkActive="active" >comments</a>
+<a href="/past" routerLinkActive="active" >past</a>
+<a href="/submit" routerLinkActive="active" >submit</a>
+<a *ngIf="check()" href="/login" routerLinkActive="active" >login</a>
+<div *ngIf="!check()">
+    <span>{{user}}</span>
+    <button (click)="logout()">logout</button>
+</div>
+
+
+</div>
+
+<router-outlet></router-outlet>
